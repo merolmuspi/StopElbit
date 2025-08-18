@@ -16,6 +16,7 @@ header {
     letter-spacing: 2px;
 }
 
+
 .menu-item {
     color: red;
     text-decoration: none;
@@ -47,7 +48,7 @@ main {
     border: 1px solid black;
     margin: 2rem 0;
     padding: 1rem;
-    background: #f4f4f4;
+    background: #fAfAfA;
     box-shadow: 8px 8px 0px red;
 }
 
