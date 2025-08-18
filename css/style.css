@@ -16,6 +16,18 @@ header {
     letter-spacing: 2px;
 }
 
+.menu-item {
+    color: red;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.menu-item:hover {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 main {
     padding: 2rem;
 }
@@ -27,11 +39,13 @@ main {
     background: #f4f4f4;
     box-shadow: 8px 8px 0px red;
 }
+
 .block ul li a:hover {
     color: red;
     font-weight: bold;
 
 }
+
 .link-grid {
     display: flex;
     flex-wrap: wrap;
