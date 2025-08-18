@@ -90,6 +90,51 @@ main {
     color: red;
 }
 
+.principle {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #fff8f8;
+    transition: transform 0.2s;
+}
+
+.principle:hover {
+    transform: scale(1.02);
+    border-color: red;
+    box-shadow: 1px 1px 1px red;
+
+}
+
+.flex-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* About 30%, Why Direct Action 70% */
+.flex-row .block:first-child {
+    flex: 0 0 30%;
+    min-width: 200px;
+}
+
+.flex-row .block:last-child {
+    flex: 0 0 70%;
+    min-width: 300px;
+}
+
+/* Principles grid */
+.principle-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.principle-grid .principle {
+    flex: 1 1 45%;
+    min-width: 280px;
+}
+
+
 
 h2, h3 {
     text-transform: uppercase;
