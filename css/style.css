@@ -104,7 +104,50 @@ main {
     box-shadow: 1px 1px 1px red;
 
 }
+.stories {
+    margin: 2rem 0;
+}
 
+.language-switcher {
+    margin-bottom: 1rem;
+}
+
+.language-switcher button {
+    margin-right: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    background: red;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+}
+
+.language-switcher button:hover {
+    background: darkred;
+}
+
+.story-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.story {
+    flex: 1 1 300px;
+    border: 1px solid black;
+    padding: 1rem;
+    background: #fAfAfA;
+    box-shadow: 6px 6px 0px red;
+}
+
+.story .lang {
+    display: none;
+}
+
+.story .lang.en {
+    display: block;
+}
 .flex-row {
     display: flex;
     gap: 2rem;
