@@ -1,6 +1,6 @@
 /* Base brutalist/disruptive styling */
 body {
-    font-family: "Courier New", monospace;
+    font-family: "Arial", monospace;
     background: #fff;
     color: #111;
     margin: 0;
@@ -28,6 +28,43 @@ main {
     background: #f4f4f4;
     box-shadow: 8px 8px 0px red;
 }
+.block ul li a:hover {
+    color: red;
+    font-weight: bold;
+
+}
+.link-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.link-card {
+    display: block;
+    flex: 1 1 250px;
+    border: 1px solid black;
+    padding: 1rem;
+    background: #f4f4f4;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.link-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.link-card p {
+    margin: 0;
+}
+
+.link-card:hover {
+    transform: scale(1.05);
+    color: red;
+}
+
 
 h2, h3 {
     text-transform: uppercase;
@@ -39,9 +76,4 @@ p {
     margin: 1rem 0;
 }
 
-h2:hover, h3:hover {
-    background: yellow;
-    color: black;
-    cursor: crosshair;
-}
 
