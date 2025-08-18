@@ -25,7 +25,18 @@ header {
 .menu-item:hover {
     color: white;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
+}
+.menu-item.active {
+    color: white;
+    background: red;
+    padding: 0.3rem 0.6rem;
+    text-decoration: none;
+}
+
+.menu-item.active:hover {
+    color: white;
+    background: darkred;
 }
 
 main {
