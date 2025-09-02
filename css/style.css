@@ -134,13 +134,44 @@ main {
 }
 
 .story {
-    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     border: 1px solid black;
     padding: 1rem;
     background: #fAfAfA;
     box-shadow: 6px 6px 0px red;
 }
+.story-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+.story-text {
+    flex: 0 0 40%;   /* text takes about 40% */
+    min-width: 280px;
+}
 
+.story-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: 50% 30%; /* focus a bit toward the top */
+    border: 1px solid black;
+    box-shadow: 4px 4px 0px red;
+}
+.fact-box {
+    border: 3px solid red;
+    padding: 1rem;
+    background: #fff8f8;
+    box-shadow: 4px 4px 0 black;
+}
+
+.fact-box h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+    color: red;
+}
 .story .lang {
     display: none;
 }
@@ -189,4 +220,67 @@ p {
     margin: 1rem 0;
 }
 
+@media (max-width: 768px) {
+    .story {
+        flex-direction: column;   /* stack vertically */
+        align-items: center;      /* center items */
+    }
 
+    .story-content {
+        flex-direction: column;
+    }
+
+    .story-text,
+    .fact-box {
+        flex: 1;
+        max-width: 50%;
+    }
+    .story-img {
+        flex: 1 1 auto;           /* take full width */
+        max-width: 80%;          /* scale image to container */
+        margin-top: 1rem;         /* space between text and image */
+    }
+}
+.image {
+    display: block;      /* makes it behave like a block */
+    margin: 0 auto;      /* auto left/right margin centers it */
+    max-width: 100%;     /* makes it responsive */
+    height: auto;
+}
+
+.hero {
+    position: relative;
+    background-size: cover;
+    /* same trick */
+    background: url("../resources/protest_images/OipIsElbitIsGenocide.jpg") no-repeat 50% 30%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;                 /* top/right/bottom/left = 0 */
+    background: inherit;      /* uses parent background */
+    filter: blur(3px);
+    z-index: 0;
+}
+
+
+
+.hero-overlay {
+    background: rgba(0,0,0,0.6); /* black transparent layer */
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    color: red;
+    margin-bottom: 1rem;
+}
