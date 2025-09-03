@@ -217,6 +217,9 @@ main {
 .story .lang {
     display: none;
 }
+.story h3{
+    width: 100%;
+}
 .story h3,
 .story p {
     overflow-wrap: break-word;
