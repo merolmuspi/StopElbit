@@ -540,19 +540,18 @@ p {
     margin: 0;
 }
 
-.card a.read-more {
+.read-more {
     display: inline-block;
     padding: 0.5rem 1rem;
     background: #fff8f8;
     color: black;
     text-decoration: none;
     border: 2px solid red;
-
     text-align: center;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
-.card a.read-more:hover {
+.read-more:hover {
     background: red;
     color: white;
     border-color: darkred;
@@ -599,3 +598,109 @@ p {
     background: darkred;
     transform: scale(1.05);
 }
+.flow-diagram.horizontal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: auto;
+    gap: 1rem 1rem; /* vertical gap, horizontal gap */
+    justify-items: center;
+    align-items: center;
+    margin: 1.5rem;
+}
+
+.flow-diagram.horizontal .step {
+    background: #f3f3f3;
+    border: 2px solid red;
+    padding: 1rem;
+    text-align: center;
+}
+
+.flow-diagram.horizontal .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1.8);
+}
+.flow-diagram.horizontal .arrow svg {
+    transform: rotate(90deg); /* point down */
+}
+h4{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .flow-diagram.horizontal {
+        flex-direction: column;
+        align-items: center; /* center the whole column */
+    }
+
+    .flow-diagram.horizontal .arrow {
+        justify-content: center; /* center the arrow */
+        width: 100%; /* make arrow span full width */
+    }
+
+    .flow-diagram.horizontal .arrow svg {
+        transform: rotate(90deg); /* point down */
+    }
+}
+
+.flow-diagram-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.flow-diagram-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('../resources/protest_images/ThisCompanyKillsPeople.jpeg') no-repeat center center / cover;
+    filter: blur(3px) brightness(0.4);
+    z-index: 0;
+}
+
+
+.flow-diagram-content {
+    position: relative; /* on top of pseudo-element */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows: auto;
+    gap: 1.5rem;
+    justify-items: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 1;
+}
+
+.flow-diagram-content .step {
+    background: #f3f3f3;
+    border: 2px solid red;
+    padding: 1rem;
+    width: 180px;
+    min-height: 100px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.flow-diagram-content .step:hover {
+    width: 250px;
+    min-height: auto;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.flow-diagram-content .step p {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.flow-diagram-content .step:hover p {
+    display: block;
+}
+
