@@ -732,40 +732,40 @@ h4{
 .flow-diagram-content .step:hover p {
     display: block;
 }
-
 .trial-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Default mobile layout: single column */
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
 
-.trial-grid .story-image {
+.trial-grid .story-img-container {
     width: 100%;
 }
 
-.trial-grid .fact-box {
-    background-color: #f8f8f8;
+.trial-content {
+    display: flex;
+    flex-direction: column; /* default mobile stacking */
+    gap: 1.5rem;
+}
+
+.trial-content .fact-box {
     padding: 1rem;
-    border-left: 4px solid #d32f2f;
+    margin: 1rem auto;
 }
 
 /* Desktop layout */
 @media (min-width: 768px) {
-    .trial-grid {
-        grid-template-columns: 2fr 1fr; /* text takes 2/3, fact box 1/3 */
-        align-items: start;
+    .trial-content {
+        flex-direction: row; /* side by side */
+        gap: 2rem;
+        align-items: flex-start;
     }
 
-    .trial-grid .fact-box {
-        order: 0; /* ensure fact box stays on the side */
+    .trial-content .trial-text {
+        flex: 2;
     }
-}
 
-@media (max-width: 767px) {
-    .trial-grid {
-        grid-template-columns: 1fr;
-    }
-    .trial-grid .fact-box {
-        order: -1; /* move fact box above text */
+    .trial-content .fact-box {
+        flex: 1; /* approx 30% */
     }
 }
