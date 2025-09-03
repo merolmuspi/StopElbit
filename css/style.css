@@ -650,7 +650,7 @@ h4{
 .flow-diagram-wrapper {
     position: relative;
     width: 100%;
-    padding: 2rem 0;
+
 }
 
 .flow-diagram-wrapper::before {
