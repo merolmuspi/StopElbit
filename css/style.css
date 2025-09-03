@@ -8,7 +8,7 @@ body {
 .container {
     max-width: 1200px;        /* keeps content from stretching too wide */
     margin: 0 auto;           /* centers it */
-    padding: 0 4rem;          /* default side padding */
+    padding: 0 1.5rem;          /* default side padding */
 }
 h3{
     background-color: red;
@@ -671,12 +671,17 @@ h4{
 }
 
 .flow-diagram-wrapper {
-    width: 100%;
-    max-width: 1200px;  /* same as container */
-    margin: 0 auto;     /* center it */
-    padding: 0;         /* remove extra padding to match stories */
     position: relative;
+    width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
+}
+.flow-diagram-content,
+.flow-diagram-content h3,
+.flow-diagram-content .step,
+.flow-diagram-content .arrow {
+    position: relative;
+    z-index: 1; /* above the background */
 }
 
 .flow-diagram-content {
@@ -687,13 +692,19 @@ h4{
     align-items: start;  /* optional */
     width: 100%;
     box-sizing: border-box;
+    padding: 0 1.5rem; /* move padding to content instead */
+
 }
 
 
 
+.flow-diagram-content .step {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .flow-diagram-content .step:hover {
-    max-width: 250px;         /* hover expansion limited */
-    background: rgba(255,255,255,1);
+    transform: scale(1.1);
+    background: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
@@ -706,13 +717,16 @@ h4{
 .flow-diagram-wrapper::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
     background: url('../resources/protest_images/ThisCompanyKillsPeople.jpeg') no-repeat center center / cover;
     filter: blur(3px) brightness(0.4);
     z-index: 0;
+}
+.flow-diagram-wrapper .container {
+    max-width: 1200px;
+    margin: 0 auto;  /* centers content */
+    padding: 0 1.5rem; /* optional */
+    box-sizing: border-box;
 }
 
 
@@ -721,9 +735,13 @@ h4{
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1.5rem;
     justify-items: center;
-    align-items: start;  /* optional */
+    align-items: start;
     width: 100%;
     box-sizing: border-box;
+    padding: 0 ;
+}
+.step {
+    padding: 1rem; /* keep inner spacing */
 }
 
 .flow-diagram-content .step {
