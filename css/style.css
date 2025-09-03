@@ -10,6 +10,14 @@ body {
     margin: 0 auto;           /* centers it */
     padding: 0 4rem;          /* default side padding */
 }
+h3{
+    background-color: red;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
 
 @media (max-width: 1024px) {
     .container {
@@ -155,24 +163,30 @@ main {
     flex-wrap: wrap;
     flex-direction: column;
     gap: 1.5rem;
-    margin: 1rem ;
+
 }
 
 .story {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 2rem;
     border: 1px solid black;
     padding: 1rem;
     background: #fAfAfA;
-    box-shadow: 6px 6px 0px red;
     margin: 1rem;
 }
 .story-content {
     display: flex;
     gap: 2rem;
     align-items: flex-start;
+}
+.story-context {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: nowrap;   /* stay side by side */
+    margin-top: 2rem;
 }
 .story-img-container {
     width: 100%;
@@ -183,6 +197,7 @@ main {
     flex: 1 1 40%;
     min-width: 280px;
 }
+
 .story-img {
     width: 100%;
     height: 100%;
@@ -201,6 +216,10 @@ main {
 
 .story .lang.en {
     display: block;
+}
+.story-text {
+    flex: 1 1 auto;      /* text grows to fill space */
+    min-width: 0;        /* prevents overflow pushing fact-box down */
 }
 .flex-row {
     display: flex;
@@ -232,10 +251,7 @@ main {
 
 
 
-h2, h3 {
-    text-transform: uppercase;
-    margin-top: 1rem;
-}
+
 
 p {
     line-height: 1.6;
@@ -251,57 +267,77 @@ p {
     .story-content {
         flex-direction: column;
     }
+
+    .story-img-container {
+        width: 100%;
+        max-width: 100%;
+
+    }
+
+    .story-img {
+        width: 100%;
+        height: 100%;
+    }
+
     .story-context {
-        flex: 1 1 55%;  /* text takes rest */
-        min-width: 300px;
+        flex: 1 1 100%;
+        min-width: unset;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 
     .story-text, .fact-box {
         flex: 1 1 100%;
         max-width: 100%;
     }
-    .story-img {
-        flex: 1 1 auto;
-        max-width: 80%;
-        margin-top: 1rem;
-    }
+
     .fact-box {
-        margin-top: 1rem;
+        flex: 1 1 auto;       /* shrink to fit content */
+        max-width: fit-content; /* don't stretch full width */
+        margin: 1rem 0;       /* some vertical spacing */
+        padding: 0.5rem 1rem; /* reduce padding */
+        font-size: 0.9rem;    /* slightly smaller text */
+        border-radius: 6px;   /* soft corners */
+        background: #fff8f8;  /* soft background */
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
     }
-}
-.story-context {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    .fact-box ul {
+        padding: 0.5rem 0;    /* tighten spacing inside list */
+    }
+
+    .fact-box li {
+        padding: 0.25rem 0;   /* less vertical spacing */
+    }
 }
 
-.story-text {
-    flex: 1 1 65%;
-    min-width: 250px;
-    line-height: 1.7;
-}
+
+
 
 .fact-box {
-    flex: 0 0 30%;
-    min-width: 200px;
+    flex: 0 0 300px;
+    list-style: none;
+    min-width: 220px;
+    max-width: 30%;
     border: 2px solid red;
     background: #fff8f8;
-    padding: 1rem;
-    box-shadow: 3px 3px 0 black;
-    border-radius: 6px;
+    padding: 0;
+    margin: 0;
+
+    font-size: 0.95rem;
+    align-self: flex-start; /* keeps it aligned at the top of the text */
 }
 
 .fact-box h3 {
-    margin-top: 0;
+    margin-top: 1rem;
     text-transform: uppercase;
     color: red;
     font-size: 1.1rem;
+    margin-bottom: 0.8rem;
 }
 
 .fact-box ul {
     list-style: none;
-    padding: 0;
+    padding: 1rem;
     margin: 0;
 }
 
@@ -310,6 +346,11 @@ p {
     justify-content: space-between;
     border-bottom: 1px solid #ddd;
     padding: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+.fact-box li strong {
+    color: #111;
 }
 .image {
     display: block;
@@ -317,13 +358,13 @@ p {
     max-width: 100%;
     height: auto;
 }
-
+/* Base (desktop & tablet look nice and strong) */
 .hero {
     position: relative;
     width: 100%;
-    height: 60vh; /* take 60% of viewport height */
+    height: 70vh;
     background: url("../resources/protest_images/OipIsElbitIsGenocide.jpg")
-    no-repeat 50% 30% / cover; /* focus + crop */
+    no-repeat 50% 30% / cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -335,8 +376,8 @@ p {
     position: absolute;
     inset: 0;
     background: inherit;
-    filter: blur(5px) brightness(0.7);
-    transform: scale(1.05);
+    filter: blur(2px) brightness(0.75);
+    transform: scale(1.1);
     z-index: 0;
 }
 
@@ -345,13 +386,48 @@ p {
     z-index: 1;
     text-align: center;
     color: white;
-    padding: 2rem;
+    padding: 2rem 3rem;
+    background: rgba(0,0,0,0.4);
+    max-width: 800px;
 }
 
 .hero-overlay h1 {
-    font-size: clamp(2rem, 5vw, 4rem); /* responsive scaling */
+    font-size: clamp(2rem, 6vw, 4.5rem);
     color: red;
     margin-bottom: 1rem;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+
+}
+
+.hero-overlay p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    color: #f4f4f4;
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 768px) {
+    .hero {
+        height: 25vh;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .hero-overlay {
+        width: 100%;
+        max-width: none;
+        padding: 1rem;
+        background: rgba(0,0,0,0.55);
+    }
+
+    .hero-overlay h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-overlay p {
+        font-size: 0.95rem;
+    }
 }
 
