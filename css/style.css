@@ -648,15 +648,45 @@ h4{
 }
 
 .flow-diagram-wrapper {
-    position: relative;
     width: 100%;
+    max-width: 1200px;  /* same as container */
+    margin: 0 auto;     /* center it */
+    padding: 0;         /* remove extra padding to match stories */
+    position: relative;
+    box-sizing: border-box;
+}
 
+.flow-diagram-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    align-items: start;  /* optional */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+.flow-diagram-content .step:hover {
+    max-width: 250px;         /* hover expansion limited */
+    background: rgba(255,255,255,1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.flow-diagram-content::after {
+    content: '';
+    width: 0;
+    display: block;
 }
 
 .flow-diagram-wrapper::before {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: url('../resources/protest_images/ThisCompanyKillsPeople.jpeg') no-repeat center center / cover;
     filter: blur(3px) brightness(0.4);
     z-index: 0;
@@ -664,27 +694,27 @@ h4{
 
 
 .flow-diagram-content {
-    position: relative; /* on top of pseudo-element */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    grid-auto-rows: auto;
     gap: 1.5rem;
     justify-items: center;
-    align-items: center;
-    padding: 2rem;
-    z-index: 1;
+    align-items: start;  /* optional */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .flow-diagram-content .step {
-    background: #f3f3f3;
-    border: 2px solid red;
-    padding: 1rem;
-    width: 180px;
+    width: 100%;              /* take full grid cell */
+    max-width: 180px;         /* base width */
     min-height: 100px;
     text-align: center;
+    padding: 1rem;
+    background: #f3f3f3;
+    border: 2px solid red;
     overflow: hidden;
     position: relative;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .flow-diagram-content .step:hover {
