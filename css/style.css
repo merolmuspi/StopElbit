@@ -789,16 +789,21 @@ h4{
         flex: 1; /* approx 30% */
     }
 }
+/* Base QR styling */
 .qr-image-container {
     flex: 0 0 40%;
     display: flex;
-    flex-direction: column;   /* stack image above text */
-    align-items: center;      /* center horizontally */
-    justify-content: center;  /* center vertically if parent allows */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
+
 .qr-image-container img {
     margin-top: 1.5rem;
+    max-width: 300px; /* hard cap on size for desktops */
+    width: 100%;
+    height: auto;
 }
 /* Fix QR and images on small screens */
 .qr-image-container img,
@@ -818,8 +823,15 @@ h4{
     .flex-row {
         gap: 1rem;
     }
+
+}
+@media (max-width: 600px) {
+    .qr-image-container {
+        flex: 0 0 100%;     /* take full width but not side-by-side */
+    }
     .qr-image-container img {
-        max-width: 70%; /* prevents QR from taking full screen */
+        max-width: 200px;   /* smaller cap on phones */
+        width: 80%;         /* scales nicely */
     }
 }
 
