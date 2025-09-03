@@ -789,3 +789,14 @@ h4{
         flex: 1; /* approx 30% */
     }
 }
+.qr-image-container {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;   /* stack image above text */
+    align-items: center;      /* center horizontally */
+    justify-content: center;  /* center vertically if parent allows */
+    text-align: center;
+}
+.qr-image-container img {
+    margin-top: 1.5rem;
+}
