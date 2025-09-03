@@ -800,3 +800,42 @@ h4{
 .qr-image-container img {
     margin-top: 1.5rem;
 }
+/* Fix QR and images on small screens */
+.qr-image-container img,
+.block img,
+.story-img,
+.export-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Reduce padding/margin for blocks on phones */
+@media (max-width: 600px) {
+    .block {
+        padding: 0.8rem;
+        margin: 1rem 0;
+    }
+    .flex-row {
+        gap: 1rem;
+    }
+    .qr-image-container img {
+        max-width: 70%; /* prevents QR from taking full screen */
+    }
+}
+
+/* Adjust typography for small screens */
+@media (max-width: 600px) {
+    h3 {
+        font-size: 1.6rem; /* down from 3rem */
+    }
+    .hero-overlay h1 {
+        font-size: 1.5rem;
+    }
+    .hero-overlay p {
+        font-size: 0.9rem;
+    }
+    p {
+        padding: 0.2rem;
+        margin: 0.5rem 0;
+    }
+}
