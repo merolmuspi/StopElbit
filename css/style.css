@@ -5,6 +5,23 @@ body {
     margin: 0;
     padding: 0;
 }
+.container {
+    max-width: 1200px;        /* keeps content from stretching too wide */
+    margin: 0 auto;           /* centers it */
+    padding: 0 4rem;          /* default side padding */
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1rem;      /* reduce margins on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 0.2rem;      /* minimal margin on phones */
+    }
+}
 
 header {
     background: black;
@@ -143,7 +160,8 @@ main {
 
 .story {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 2rem;
     border: 1px solid black;
     padding: 1rem;
@@ -156,15 +174,26 @@ main {
     gap: 2rem;
     align-items: flex-start;
 }
-
+.story-img-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    flex: 1 1 40%;
+    min-width: 280px;
+}
 .story-img {
     width: 100%;
-    aspect-ratio: 16 / 6;
+    height: 100%;
     object-fit: cover;
-    object-position: 50% 30%;
-    border: 1px solid grey;
+    object-position: 50% 35%;
+    display: block;
+    transition: transform 0.3s ease;
 }
-
+.story-img:hover {
+    transform: scale(1.30);
+}
 
 .story .lang {
     display: none;
@@ -179,7 +208,6 @@ main {
     flex-wrap: wrap;
 }
 
-/* About 30%, Why Direct Action 70% */
 .flex-row .block:first-child {
     flex: 0 0 30%;
     min-width: 200px;
@@ -190,7 +218,7 @@ main {
     min-width: 300px;
 }
 
-/* Principles grid */
+
 .principle-grid {
     display: flex;
     flex-wrap: wrap;
@@ -216,16 +244,16 @@ p {
 
 @media (max-width: 768px) {
     .story {
-        flex-direction: column;   /* stack vertically */
-        align-items: center;      /* center items */
+        flex-direction: column;
+        align-items: center;
     }
 
     .story-content {
         flex-direction: column;
     }
     .story-context {
-        flex-direction: column;
-        gap: 1rem;
+        flex: 1 1 55%;  /* text takes rest */
+        min-width: 300px;
     }
 
     .story-text, .fact-box {
@@ -233,9 +261,9 @@ p {
         max-width: 100%;
     }
     .story-img {
-        flex: 1 1 auto;           /* take full width */
-        max-width: 80%;          /* scale image to container */
-        margin-top: 1rem;         /* space between text and image */
+        flex: 1 1 auto;
+        max-width: 80%;
+        margin-top: 1rem;
     }
     .fact-box {
         margin-top: 1rem;
@@ -245,19 +273,17 @@ p {
     display: flex;
     gap: 2rem;
     align-items: flex-start;
-    flex-wrap: wrap;       /* allows stacking on smaller screens */
+    flex-wrap: wrap;
 }
 
-/* Text section */
 .story-text {
-    flex: 1 1 65%;         /* text takes about 2/3 of space */
+    flex: 1 1 65%;
     min-width: 250px;
     line-height: 1.7;
 }
 
-/* Fact box section */
 .fact-box {
-    flex: 0 0 30%;         /* fact box takes about 1/3 */
+    flex: 0 0 30%;
     min-width: 200px;
     border: 2px solid red;
     background: #fff8f8;
@@ -286,45 +312,46 @@ p {
     padding: 0.3rem 0;
 }
 .image {
-    display: block;      /* makes it behave like a block */
-    margin: 0 auto;      /* auto left/right margin centers it */
-    max-width: 100%;     /* makes it responsive */
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
     height: auto;
 }
 
 .hero {
     position: relative;
-    background-size: cover;
-    /* same trick */
-    background: url("../resources/protest_images/OipIsElbitIsGenocide.jpg") no-repeat 50% 30%;
-    height: 60vh;
+    width: 100%;
+    height: 60vh; /* take 60% of viewport height */
+    background: url("../resources/protest_images/OipIsElbitIsGenocide.jpg")
+    no-repeat 50% 30% / cover; /* focus + crop */
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
+
 .hero::before {
     content: "";
     position: absolute;
-    inset: 0;                 /* top/right/bottom/left = 0 */
-    background: inherit;      /* uses parent background */
-    filter: blur(3px);
+    inset: 0;
+    background: inherit;
+    filter: blur(5px) brightness(0.7);
+    transform: scale(1.05);
     z-index: 0;
 }
 
-
-
 .hero-overlay {
-    background: rgba(0,0,0,0.6); /* black transparent layer */
-    padding: 2rem;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
     position: relative;
     z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 2rem;
 }
 
 .hero-overlay h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 4rem); /* responsive scaling */
     color: red;
     margin-bottom: 1rem;
+    letter-spacing: 2px;
 }
+
