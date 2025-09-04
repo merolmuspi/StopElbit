@@ -1,5 +1,5 @@
 body {
-    font-family: "Arial Rounded MT Bold", monospace;
+    font-family: "Arial", monospace;
     background: #fff;
     color: #111;
     margin: 0;
@@ -914,4 +914,18 @@ h4{
 }
 .cta-buttons .contact:hover {
     background: #fdd;
+}
+.hero,
+.hero::before,
+.hero-overlay {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Ensure body never scrolls horizontally */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
