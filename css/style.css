@@ -655,7 +655,7 @@ h4{
     font-weight: bold;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .flow-diagram.horizontal {
         display: grid;
         grid-template-columns: 1fr;
@@ -672,10 +672,10 @@ h4{
 
     .flow-diagram.horizontal .arrow svg {
         transform: rotate(90deg);
-        width: 20px;       /* arrow thickness */
-        height: 100%;      /* fills vertical space between steps */
+        width: 20px;       !* arrow thickness *!
+        height: 100%;      !* fills vertical space between steps *!
     }
-}
+}*/
 
 .flow-diagram-wrapper {
     position: relative;
