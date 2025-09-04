@@ -10,6 +10,12 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    box-sizing: border-box; /* ensure padding is included in width */
+}
+img, .story-img, .export-image img, .block img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 h3{
     background-color: red;
