@@ -655,27 +655,12 @@ h4{
     font-weight: bold;
 }
 
-/*@media (max-width: 768px) {
-    .flow-diagram.horizontal {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
+@media (max-width: 1024px) {
+    .flow-diagram-content .step {
+        max-width: 140px;
     }
+}
 
-    .flow-diagram.horizontal .arrow {
-        width: 100%;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .flow-diagram.horizontal .arrow svg {
-        transform: rotate(90deg);
-        width: 20px;       !* arrow thickness *!
-        height: 100%;      !* fills vertical space between steps *!
-    }
-}*/
 
 .flow-diagram-wrapper {
     position: relative;
