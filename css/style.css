@@ -747,6 +747,8 @@ h4{
     cursor: pointer;
 }
 
+
+
 .flow-diagram-content .step:hover {
     width: 250px;
     min-height: auto;
@@ -895,6 +897,27 @@ h4{
     text-align: center;
     text-decoration: none;
     transition: all 0.3s ease;
+}
+/* On mobile, make the title span full width above steps */
+@media (max-width: 768px) {
+    .flow-diagram-content {
+        grid-template-columns: 1fr; /* stack everything vertically */
+        text-align: center;
+    }
+
+    .flow-diagram-content h3 {
+        grid-column: 1 / -1; /* force heading across full width */
+        order: -1;           /* push it to the top */
+        margin-bottom: 1rem;
+    }
+}
+/* Mobile overrides */
+@media (max-width: 600px) {
+    .cta-buttons .read-more {
+        max-width: 130px;        /* shrink button width */
+        font-size: 0.8rem;       /* shrink text */
+        padding: 0.4rem 0.7rem;  /* tighter padding */
+    }
 }
 
 .cta-buttons .read-more:hover {
