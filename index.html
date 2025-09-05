@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stop Elbit</title>
+    <title>Stop Elbit - Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,15 +13,109 @@
         <a href="index.html" class="menu-item active">Home</a> |
         <a href="html/research.html" class="menu-item">Research</a> |
         <a href="html/donate.html" class="menu-item">Donate</a> |
-        <a href="html/contact.html" class="menu-item">Contact</a>|
+        <a href="html/contact.html" class="menu-item">Contact</a> |
         <a href="html/news.html" class="menu-item">News</a>
-
     </nav>
 </header>
 
+<section class="hero">
+    <div class="hero-overlay">
+        <h1>STOP ELBIT IN BELGIUM</h1>
+        <p>Exposing the Belgian–Israeli arms connection. Supporting activists on trial. Demanding an embargo.</p>
+        <div class="cta-buttons">
+            <a href="html/research.html" class="read-more">READ THE RESEARCH</a>
+            <a href="html/donate.html" class="read-more donate">SUPPORT THE TRIAL DEFENSE</a>
+        </div>
+    </div>
+</section>
 
-<main>
-   <h2>Coming Soon</h2>
+<main class="container">
+
+    <!-- Section 1: Action & Supply Chain -->
+    <section class="stories">
+        <div class="story-grid">
+            <div class="story flow-diagram-wrapper">
+                <div class="flow-diagram-content">
+                    <h3>The Supply Chain of Complicity</h3>
+                    <div class="flow-diagram horizontal">
+
+                        <div class="step">
+                            <h4>Action</h4>
+                            <p>On March 4, 2024, 100 activists blocked OIP-Elbit in Belgium. Their message: no complicity in Israel’s genocidal war machine.</p>
+                        </div>
+                        <div class="arrow">
+                            <svg width="50" height="20">
+                                <line x1="0" y1="10" x2="50" y2="10" stroke="red" stroke-width="2" marker-end="url(#arrowhead)"/>
+                                <defs>
+                                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                                        <polygon points="0 0, 10 3.5, 0 7" fill="red"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <div class="step">
+                            <h4>Elbit</h4>
+                            <p>Israel’s largest arms manufacturer, exporting weapons tested on Palestinians.</p>
+                        </div>
+                        <div class="arrow">
+                            <svg width="50" height="20"><line x1="0" y1="10" x2="50" y2="10" stroke="red" stroke-width="2" marker-end="url(#arrowhead)"/></svg>
+                        </div>
+
+                        <div class="step">
+                            <h4>OIP</h4>
+                            <p>Elbit’s Belgian subsidiary. 99.95% owned by Elbit, feeding profits and technology back to Israel’s war economy.</p>
+                        </div>
+                        <div class="arrow">
+                            <svg width="50" height="20"><line x1="0" y1="10" x2="50" y2="10" stroke="red" stroke-width="2" marker-end="url(#arrowhead)"/></svg>
+                        </div>
+
+                        <div class="step">
+                            <h4>The Trial</h4>
+                            <p>Seven activists face trial for blockading OIP-Elbit. The case is about Gaza, but also about freedom of protest in Belgium.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Articles -->
+    <section class="stories">
+        <h2>Articles & Voices</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Voices of Resistance</h3>
+                <p>Read testimonies from activists, workers, and community members standing against Elbit.</p>
+                <a href="html/news.html" class="read-more">Explore</a>
+            </div>
+            <div class="card">
+                <h3>Movement Articles</h3>
+                <p>In-depth documentation of the struggle in Belgium and abroad.</p>
+                <a href="html/news.html" class="read-more">Explore</a>
+            </div>
+            <div class="card">
+                <h3>Press Coverage</h3>
+                <p>See how mainstream media is reporting on the trial and actions against Elbit.</p>
+                <a href="html/news.html" class="read-more">Explore</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Closing CTA -->
+    <section class="stories">
+        <div class="story">
+            <h2>Join the Movement</h2>
+            <div class="cta-buttons">
+                <a href="html/donate.html" class="read-more donate">DONATE</a>
+                <a href="html/contact.html" class="read-more contact">CONTACT US</a>
+            </div>
+        </div>
+    </section>
+
 </main>
+
+<button id="back-to-top">↑</button>
 </body>
 </html>
