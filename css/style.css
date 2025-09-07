@@ -1036,7 +1036,6 @@ html, body {
     height: auto;
     object-fit: cover;
     border: 1px dashed red;
-    border-radius: 6px;
     transition: transform 0.3s ease;
 }
 
