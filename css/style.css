@@ -5,6 +5,52 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.header {
+    display: flex;
+    flex-direction: column;   /* stack logo above nav */
+    align-items: center;      /* center everything */
+    padding: 1rem;
+    color: red;
+    text-align: center;
+}
+
+.logo-wrapper {
+    width: 250px;
+    height: 250px;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+nav {
+    font-weight: bold;
+}
+
+
+@media (max-width: 600px) {
+    .logo-wrapper {
+        max-width: 120px; /* even smaller on mobile */
+        max-height: 120px;
+    }
+
+    .header {
+        flex-direction: column; /* stack items vertically if needed */
+        text-align: center;
+    }
+}
+
+
 .container {
     width: 100%;
     max-width: 1200px;
