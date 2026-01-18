@@ -628,7 +628,11 @@ p {
     font-size: 1.8rem;
     margin: 0;
 }
-
+news-page-header {
+    font-size: 1.2rem;
+    color: lightgrey;
+    margin-bottom: 2rem;
+}
 .card p {
     margin: 0;
 }
