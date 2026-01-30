@@ -685,7 +685,7 @@ news-page-header {
     border-radius: 50%;
     border: none;
     background: red;
-    color: white;
+    color: lightgray;
     font-size: 2rem;
     display: flex;
     justify-content: center;
@@ -695,7 +695,7 @@ news-page-header {
 
 
 #back-to-top:hover {
-    background: green;
+    background: darkred;
     transform: scale(1.05);
 }
 .flow-diagram.horizontal {
